@@ -1,15 +1,17 @@
-# MySQL Data Viewer
+# SNP QTrack - Labor Tracking System
 
-Eine VB.NET Windows Forms Anwendung zum sicheren Anzeigen von MySQL-Datenbanken.
+Eine VB.NET Windows Forms Anwendung für Quality Management und Laborverwaltung mit dynamischen Formularen.
 
 ## Features
 
-- **Sichere Datenbankverbindung**: Credentials werden verschlüsselt mit DPAPI gespeichert
-- **Tabellen auswählen**: Alle Tabellen aus der Datenbank laden und auswählen
-- **Daten anzeigen**: Alle Daten einer Tabelle in einem DataGridView darstellen
-- **CSV Export**: Daten können als CSV-Datei exportiert werden
-- **Auto-Refresh**: Automatisches Laden beim Wechseln der Tabelle
-- **Verbindungstest**: Testen der Datenbankverbindung vor dem Speichern
+- **🔐 Sichere Datenbankverbindung**: Credentials werden verschlüsselt mit DPAPI gespeichert
+- **📋 Prüfauftrag erfassen**: Dynamische Eingabemasken basierend auf Datenbankschema
+- **🎨 Formular Designer**: Drag & Drop Editor für eigene Formulare
+- **🔄 Auto-Generierung**: Formulare automatisch aus Datenbanktabellen generieren
+- **💾 XML-Konfiguration**: Formulare als XML speichern und laden
+- **🔧 Schweißnahtprüfung**: Spezialisiertes Modul für Schweißnahtdokumentation
+- **📊 Datenvisualisierung**: Alle Daten in einem DataGridView darstellen
+- **🔍 Auto-ID-Generierung**: Automatische Timestamp-basierte IDs für Prüfaufträge
 
 ## Voraussetzungen
 
@@ -100,20 +102,23 @@ C:\Users\[Benutzername]\AppData\Local\MySQLDataViewer\user.config
 ## Projektstruktur
 
 ```
-MySQLDataViewer/
-├── FormMain.vb                          # Hauptformular mit DataGridView
-├── FormMain.Designer.vb                 # UI-Designer Code
+labtracking/
+├── FormHauptmenu.vb                     # Hauptmenü
+├── FormMain.vb                          # Datenvisualisierung
+├── FormDatenEingabe.vb                  # Dynamische Eingabemaske
 ├── FormDatenbankEinstellungen.vb        # Einstellungsdialog
-├── FormDatenbankEinstellungen.Designer.vb
+├── FormDesigner.vb                      # Drag & Drop Formular Designer
+├── FormRenderer.vb                      # XML-basierte Formularanzeige
+├── FormSchweissnahtpruefung.vb          # Schweißnahtprüfungs-Modul
+├── FormularKonfiguration.vb             # XML-Serialisierung für Formulare
 ├── PasswordEncryption.vb                # DPAPI Verschlüsselung
 ├── MySQLDataViewer.vbproj               # Projektdatei
+├── packages.config                      # NuGet Pakete
 ├── App.config                           # Konfiguration
 └── My Project/
     ├── Application.myapp                # Application Settings
-    ├── Application.Designer.vb
-    ├── AssemblyInfo.vb                  # Assembly Informationen
     ├── Settings.settings                # User Settings Definition
-    └── Settings.Designer.vb
+    └── AssemblyInfo.vb                  # Assembly Informationen
 ```
 
 ## Fehlerbehebung
